@@ -29,5 +29,4 @@ result = lambda x, y: x**2 if x < y else y**2
 print(result(6, 4))
 
 
-alist = [1, 2, 3, 4]
-print(2 if 7 in alist else None)
+
