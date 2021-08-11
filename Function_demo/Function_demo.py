@@ -1,7 +1,4 @@
-# what is decorator
-        # A function takes another function
-        # Extends the behavior of that function
-        # Without explicitly modifying the funciton
+
 
 # def add_num(number):
 #     return number + 5
