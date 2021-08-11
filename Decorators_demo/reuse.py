@@ -1,4 +1,4 @@
-from decorators import say_hi, say_something, say_selam
+from decorators import say_hi, say_something, say_selam, return_greet
 #with out arguments
 @say_hi
 def greet():
@@ -29,3 +29,12 @@ def selmata2(name):
 
 selmata2('Demelash')
 
+@return_greet
+def greet_return(name):
+    print('Creating greeting...')
+    return f'Hi {name}'
+
+# print(greet_return('Sador'))
+# or if we want to assign the retrun value
+hi_sador = greet_return('Sador')
+print(hi_sador)
