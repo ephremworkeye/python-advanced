@@ -1,4 +1,5 @@
 # how to reuse decorators to and from another file
+import functools
 def say_hi(func):
     def wrapper():
         func()
@@ -19,9 +20,7 @@ def say_selam(func3):
 
 # retruning value from decorators
 def return_greet(func4):
+    @functools.wraps(func4) # this line is added for accurate introspection
     def wrapper_return(*args, **kwargs):
         return func4(*args, **kwargs)
     return wrapper_return
-
-
-
