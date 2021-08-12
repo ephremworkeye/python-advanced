@@ -44,17 +44,22 @@ try:
         #         print(row)
 
         # # modifying table schema using ALTER Statment
-        alter_table_query = """ ALTER TABLE movies 
-        MODIFY COLUMN collection_in_mil DECIMAL(4,1);
-        """
-        show_table_query = "DESCRIBE movies"
+        # alter_table_query = """ ALTER TABLE movies 
+        # MODIFY COLUMN collection_in_mil DECIMAL(4,1);
+        # """
+        # show_table_query = "DESCRIBE movies"
+        # with connection.cursor() as cursor:
+        #     cursor.execute(alter_table_query)
+        #     cursor.execute(show_table_query)
+        #     result = cursor.fetchall()
+        #     print("Movie table shema after chang")
+        #     for row in result:
+        #         print(row)
+
+        ## deleting table using drop
+        drop_table_query = "DROP TABLE ratings"
         with connection.cursor() as cursor:
-            cursor.execute(alter_table_query)
-            cursor.execute(show_table_query)
-            result = cursor.fetchall()
-            print("Movie table shema after chang")
-            for row in result:
-                print(row)
+            cursor.execute(drop_table_query)
 
 except Error as e:
     print(e)
