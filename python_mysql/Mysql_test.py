@@ -14,19 +14,34 @@ try:
         #     cursor.execute(create_db_query)
 
         ## to create a table
-        create_ratings_table_query = """
-        CREATE TABLE ratings (
-            movie_id INT,
-            reviewer_id INT,
-            rating DECIMAL(2,1),
-            FOREIGN KEY(movie_id) REFERENCES movies(id),
-            FOREIGN KEY(reviewer_id) REFERENCES reviewers(id),
-            PRIMARY KEY(movie_id, reviewer_id)
-        )
-        """
+        # create_ratings_table_query = """
+        # CREATE TABLE ratings (
+        #     movie_id INT,
+        #     reviewer_id INT,
+        #     rating DECIMAL(2,1),
+        #     FOREIGN KEY(movie_id) REFERENCES movies(id),
+        #     FOREIGN KEY(reviewer_id) REFERENCES reviewers(id),
+        #     PRIMARY KEY(movie_id, reviewer_id)
+        # )
+        # """
+        # # if we want to create single table at one time we can use this 
+        # with connection.cursor() as cursor:
+        #     cursor.execute(create_ratings_table_query)
+        #     connection.commit()
+        # # # but if multiple table 
+        # with connection.cursor() as cursor:
+        #     cursor.execute(create_movies_table_query)
+        #     cursor.execute(create_reviewers_table_query)
+        #     cursor.execute(create_ratings_table_query)
+        #     connection.commit()
+
+        # # to fecth a table: equivalent to DESCRIBE <table_name>;
+        show_table_query = "Describe movies"
         with connection.cursor() as cursor:
-            cursor.execute(create_ratings_table_query)
-            connection.commit()
+            cursor.execute(show_table_query)
+            result = cursor.fetchall()
+            for row in result:
+                print(row)
 except Error as e:
     print(e)
 
