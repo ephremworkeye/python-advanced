@@ -36,12 +36,26 @@ try:
         #     connection.commit()
 
         # # to fecth a table: equivalent to DESCRIBE <table_name>;
-        show_table_query = "Describe movies"
+        # show_table_query = "Describe movies"
+        # with connection.cursor() as cursor:
+        #     cursor.execute(show_table_query)
+        #     result = cursor.fetchall()
+        #     for row in result:
+        #         print(row)
+
+        # # modifying table schema using ALTER Statment
+        alter_table_query = """ ALTER TABLE movies 
+        MODIFY COLUMN collection_in_mil DECIMAL(4,1);
+        """
+        show_table_query = "DESCRIBE movies"
         with connection.cursor() as cursor:
+            cursor.execute(alter_table_query)
             cursor.execute(show_table_query)
             result = cursor.fetchall()
+            print("Movie table shema after chang")
             for row in result:
                 print(row)
+
 except Error as e:
     print(e)
 
