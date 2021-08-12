@@ -158,12 +158,19 @@ try:
         #     connection.commit()
 
         # # reading data from table
-        select_movies_query = "SELECT * FROM movies LIMIT 5"
-        with connection.cursor() as cursor:
-            cursor.execute(select_movies_query)
-            result = cursor.fetchall()
-            for row in result:
-                print(row)
+        # select_movies_query = "SELECT * FROM movies LIMIT 5"
+        # with connection.cursor() as cursor:
+        #     cursor.execute(select_movies_query)
+        #     result = cursor.fetchall()
+        #     for row in result:
+        #         print(row)
+        
+        ## reading data using column and offest and limit
+        # select_movies_query = "SELECT title, release_year FROM movies LIMIT 5"
+        # with connection.cursor() as cursor:
+        #     cursor.execute(select_movies_query)
+        #     for row in cursor.fetchall():
+        #         print(row)
 
 except Error as e:
     print(e)
