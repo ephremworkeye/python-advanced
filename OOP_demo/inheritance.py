@@ -40,3 +40,10 @@ baby.action()
 
 print(person.description)
 print(baby.description)
+
+# if we want to check baby is instance of Person
+print(isinstance(baby, Person))
+# or if we want to check Baby class is a subclass of Person
+print(issubclass(Baby, Person))
+# if we want to check baby is an object
+print(isinstance(baby, object))
