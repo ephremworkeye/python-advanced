@@ -1,0 +1,7 @@
+@startuml
+actor Employee
+SalaryEmployee -> Employee
+HourlyEmployee -> Employee
+CommisionEmployee -> SalaryEmployee
+
+@enduml
