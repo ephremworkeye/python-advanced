@@ -1,0 +1,12 @@
+# multiple inheritace 
+    # python supports multipe inheritance
+    # allows class to derive mulitple other classes 
+
+# case for multiple inheritance
+    # we want a new class called TemporarySecratory that begaves like a Secretary in the productivity system, but is paid as an HourlyEmployee in the a payroll system
+
+# Method Resolution Order(MRO)
+    # A set of rules that diefines the search path  that python uses when searching for a method in cases of inheritance
+    # Looks like an orderd list of classes
+    # Each class has its own MRO
+    # used by the super() function
